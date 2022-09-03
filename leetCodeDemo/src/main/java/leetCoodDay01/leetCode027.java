@@ -22,15 +22,15 @@ public class leetCode027 {
         int left = 0;
         int right = nums.length-1;
         while (left<right){
-            if (left<right&&nums[left] !=val){
+            while (left<right&&nums[left] !=val){
                 left++;
             }
-            if (left<right&&nums[right] ==val){
+            while (left<right&&nums[right] ==val){
                 right--;
             }
             int temp = nums[left];
-            nums[right] = nums[left];
-            nums[left] = temp;
+            nums[left] = nums[right];
+            nums[right] = temp;
         }
         if (nums[left]==val){
             return left;
